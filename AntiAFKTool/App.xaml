@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="AntiAFKTool.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AntiAFKTool"
+    StartupUri="SplashWindow.xaml">
+    <Application.Resources />
+</Application>

@@ -1,0 +1,1404 @@
+﻿<Window
+    x:Class="AntiAFKTool.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Primitives="clr-namespace:System.Windows.Controls.Ribbon.Primitives;assembly=System.Windows.Controls.Ribbon"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AntiAFKTool"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="MAIN"
+    Title="MainWindow"
+    Width="1248"
+    Height="783"
+    Background="{x:Null}"
+    Icon="/logo.png"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Window.Effect>
+        <DropShadowEffect />
+    </Window.Effect>
+    <Border
+        x:Name="MAIN_BORDER"
+        Height="327"
+        VerticalAlignment="Top"
+        BorderBrush="Black"
+        BorderThickness="2,2,2,2"
+        CornerRadius="2,2,2,2">
+        <Grid
+            x:Name="CONTAINER"
+            Width="1162"
+            Height="309"
+            Margin="0,1,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            AutomationProperties.IsOffscreenBehavior="Onscreen">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="28*" />
+                <ColumnDefinition Width="367*" />
+            </Grid.ColumnDefinitions>
+            <Grid
+                x:Name="CONTAINER_GRID"
+                Grid.ColumnSpan="2"
+                Width="610"
+                Height="300"
+                Margin="1,0,0,22"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="14*" />
+                    <RowDefinition Height="227*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="54*" />
+                    <ColumnDefinition Width="308*" />
+                    <ColumnDefinition Width="37*" />
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FF4A1E3C" />
+                        <GradientStop Offset="0" Color="#FF2D2D2D" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Label
+                    Grid.Column="2"
+                    Margin="310,-149,0,149"
+                    HorizontalAlignment="Left"
+                    Content="Toggle on/off:"
+                    FontSize="10"
+                    FontStyle="Italic"
+                    Foreground="#FF6F6F6F" />
+                <Label
+                    Grid.Column="2"
+                    Margin="301,-193,0,169"
+                    HorizontalAlignment="Left"
+                    Content="Exit app:"
+                    FontSize="10"
+                    FontStyle="Italic"
+                    Foreground="#FF6F6F6F" />
+                <TextBox
+                    Grid.Column="2"
+                    Width="128"
+                    Margin="477,-66,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    AutomationProperties.Name="KeyBindValue_ExitApp"
+                    Background="#FF333333"
+                    BorderBrush="#FFBE2FD6"
+                    Foreground="White"
+                    SelectionBrush="#FF73054B"
+                    SelectionTextBrush="#FFFF5FBE"
+                    TextWrapping="Wrap" />
+                <Button
+                    Grid.Column="2"
+                    Width="32"
+                    Height="18"
+                    Margin="207,-44,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    AutomationProperties.Name="KeyBindSet_ExitApp"
+                    BorderBrush="Black"
+                    Content="Set"
+                    FontSize="10">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFFF54E9" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <TextBox
+                    Grid.Column="2"
+                    Width="128"
+                    Margin="427,-151,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    AutomationProperties.Name="KeyBindValue_ExitApp"
+                    Background="#FF333333"
+                    BorderBrush="#FFBE2FD6"
+                    Foreground="White"
+                    SelectionBrush="#FF73054B"
+                    SelectionTextBrush="#FFFF5FBE"
+                    TextWrapping="Wrap" />
+                <Button
+                    Grid.Column="2"
+                    Width="32"
+                    Height="18"
+                    Margin="255,-44,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    AutomationProperties.Name="KeyBindSet_ExitApp"
+                    BorderBrush="Black"
+                    Content="Set"
+                    FontSize="10">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFFF54E9" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Label
+                    Grid.Column="2"
+                    Margin="301,-225,0,199"
+                    HorizontalAlignment="Left"
+                    Content="Exit app:"
+                    FontStyle="Italic"
+                    Foreground="#FF6F6F6F" />
+                <Label
+                    Grid.ColumnSpan="2"
+                    Margin="-22,-151,0,149"
+                    HorizontalAlignment="Left"
+                    Content="Beep duration:"
+                    FontStyle="Italic"
+                    Foreground="#FFBE2FD6" />
+                <Label
+                    Grid.ColumnSpan="2"
+                    Margin="-14,-90,0,88"
+                    HorizontalAlignment="Left"
+                    Content="How many:"
+                    FontStyle="Italic"
+                    Foreground="#FFBE2FD6" />
+                <Label
+                    Grid.Column="2"
+                    Margin="336,-57,0,58"
+                    HorizontalAlignment="Left"
+                    Content="Toggle on:"
+                    FontStyle="Italic"
+                    Foreground="#FF6F6F6F" />
+                <ComboBox
+                    Grid.Column="3"
+                    Width="91"
+                    Margin="92,-170,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    RenderTransformOrigin="0.203,-0.02">
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.75" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform Y="2.854" />
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                </ComboBox>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="34,301,0,122"
+                    HorizontalAlignment="Left"
+                    Content="Repeat:"
+                    FontStyle="Italic"
+                    Foreground="#FFBE2FD6" />
+                <Label
+                    Grid.Column="2"
+                    Margin="304,-253,0,252"
+                    HorizontalAlignment="Left"
+                    Content="Toggle on:"
+                    FontStyle="Italic"
+                    Foreground="#FF6F6F6F" />
+                <ComboBox
+                    Grid.Column="2"
+                    Grid.ColumnSpan="2"
+                    Width="91"
+                    Margin="555,-294,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    RenderTransformOrigin="0.203,-0.02">
+                    <ComboBox.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleY="0.75" />
+                            <SkewTransform />
+                            <RotateTransform />
+                            <TranslateTransform Y="2.854" />
+                        </TransformGroup>
+                    </ComboBox.RenderTransform>
+                </ComboBox>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="33,365,0,58"
+                    HorizontalAlignment="Left"
+                    Content="Repeat:"
+                    FontStyle="Italic"
+                    Foreground="#FFBE2FD6" />
+            </Grid>
+            <TextBox
+                Grid.Column="1"
+                Width="128"
+                Margin="445,-191,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindValue_ExitApp"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Foreground="White"
+                SelectionBrush="#FF73054B"
+                SelectionTextBrush="#FFFF5FBE"
+                TextWrapping="Wrap" />
+            <Button
+                Grid.Column="1"
+                Width="32"
+                Height="18"
+                Margin="178,-101,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Set"
+                FontSize="10">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox
+                Grid.Column="1"
+                Width="128"
+                Margin="462,-100,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindValue_ExitApp"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Foreground="White"
+                SelectionBrush="#FF73054B"
+                SelectionTextBrush="#FFFF5FBE"
+                TextWrapping="Wrap" />
+            <Button
+                Grid.Column="1"
+                Width="32"
+                Height="18"
+                Margin="186,-51,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Set"
+                FontSize="10">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <CheckBox
+                Grid.Column="1"
+                Width="64"
+                Height="18"
+                Margin="159,-168,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="On / Off"
+                FontSize="10"
+                Foreground="#FFBE2FD6"
+                IsChecked="False"
+                RenderTransformOrigin="0.5,0.5">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.05" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <RadioButton
+                Margin="-21,-221,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="Single beep"
+                Foreground="#FFBE2FD6" />
+            <Label
+                Margin="-29,-182,0,635"
+                HorizontalAlignment="Left"
+                Content="Beep duration:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <RadioButton
+                Margin="-29,-250,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="Multi beep"
+                Foreground="#FFBE2FD6" />
+            <Label
+                Margin="-12,-119,0,565"
+                HorizontalAlignment="Left"
+                Content="How many:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Label
+                Grid.Column="1"
+                Margin="359,-87,0,546"
+                HorizontalAlignment="Left"
+                Content="Toggle on:"
+                FontStyle="Italic"
+                Foreground="#FF6F6F6F" />
+            <CheckBox
+                Grid.Column="1"
+                Width="64"
+                Height="18"
+                Margin="170,-135,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="On / Off"
+                FontSize="10"
+                Foreground="#FFBE2FD6"
+                IsChecked="False"
+                RenderTransformOrigin="0.5,0.5">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.05" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <ComboBox
+                Grid.Column="1"
+                Width="104"
+                Margin="594,-269,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="213,-303,0,758"
+                HorizontalAlignment="Left"
+                Content="Repeat:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Separator
+                Grid.Column="1"
+                Width="185"
+                Height="28"
+                Margin="673,-461,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Separator.Effect>
+                    <DropShadowEffect />
+                </Separator.Effect>
+            </Separator>
+            <CheckBox
+                Grid.Column="1"
+                Width="64"
+                Height="18"
+                Margin="238,-101,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="On / Off"
+                FontSize="10"
+                Foreground="#FFBE2FD6"
+                IsChecked="False"
+                RenderTransformOrigin="0.5,0.5">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1.05" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <Label
+                Grid.Column="1"
+                Margin="202,-276,0,733"
+                HorizontalAlignment="Left"
+                Content="Repeat:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Label
+                Margin="-12,-323,0,703"
+                HorizontalAlignment="Left"
+                Content="Beeps:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Button
+                Grid.Column="1"
+                Width="69"
+                Height="18"
+                Margin="734,-186,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="EXIT / CLOSE"
+                FontSize="4"
+                FontWeight="Bold"
+                Foreground="#FFC5A8A8">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button
+                Grid.Column="1"
+                Width="69"
+                Height="18"
+                Margin="734,-210,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Send to tray"
+                FontSize="4"
+                FontWeight="Bold"
+                Foreground="#FFC5A8A8">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button
+                Grid.Column="1"
+                Width="69"
+                Height="18"
+                Margin="734,-233,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Reset to defaults"
+                FontSize="4"
+                FontWeight="Bold"
+                Foreground="#FFC5A8A8">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button
+                Grid.Column="1"
+                Width="69"
+                Height="18"
+                Margin="734,-256,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Stop routine"
+                FontSize="4"
+                FontWeight="Bold"
+                Foreground="#FFC5A8A8">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button
+                Grid.Column="1"
+                Width="69"
+                Height="18"
+                Margin="734,-279,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Start routine"
+                FontSize="4"
+                FontWeight="Bold"
+                Foreground="#FFC5A8A8">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <StatusBar
+                Grid.ColumnSpan="2"
+                Width="610"
+                Height="11"
+                Margin="1,287,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="Black">
+                <StatusBar.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="Gray" />
+                    </LinearGradientBrush>
+                </StatusBar.Background>
+                <StatusBarItem
+                    Width="43"
+                    Height="13"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="Black"
+                    Content="Not running"
+                    FontFamily="Arial"
+                    FontSize="6"
+                    FontWeight="Bold"
+                    Foreground="#FF710000">
+                    <StatusBarItem.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFEF8383" />
+                        </LinearGradientBrush>
+                    </StatusBarItem.Background>
+                </StatusBarItem>
+            </StatusBar>
+            <ComboBox
+                Grid.Column="1"
+                Width="104"
+                Margin="579,-238,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Width="42"
+                Margin="-12,-286,0,740"
+                HorizontalAlignment="Left"
+                Content="Beeps:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Button
+                Grid.Column="1"
+                Width="32"
+                Height="18"
+                Margin="178,-75,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                AutomationProperties.Name="KeyBindSet_ExitApp"
+                BorderBrush="Black"
+                Content="Set"
+                FontSize="10">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Black" />
+                        <GradientStop Offset="1" Color="#FFFF54E9" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label
+                Grid.Column="1"
+                Margin="122,53,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Content="Choose game:"
+                FontSize="7"
+                Foreground="#FFA555B3" />
+            <ComboBox
+                Grid.Column="1"
+                Width="113"
+                Height="17"
+                Margin="92,64,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                BorderBrush="Black"
+                Foreground="#FF77005C"
+                RenderTransformOrigin="0.5,0.5">
+                <ComboBox.Background>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="#FFF0F0F0" />
+                        <GradientStop Offset="1" Color="#FF232121" />
+                    </LinearGradientBrush>
+                </ComboBox.Background>
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.5" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="598,35,0,274"
+                HorizontalAlignment="Left"
+                Content="Send setup:"
+                FontStyle="Italic"
+                Foreground="#FF6F6F6F" />
+            <RadioButton
+                Grid.Column="1"
+                Margin="610,91,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                BorderBrush="#FFBE2FD6"
+                Content="Add additional key"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,65,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="590,62,0,247"
+                HorizontalAlignment="Left"
+                Content="Key 1:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,166,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="590,163,0,146"
+                HorizontalAlignment="Left"
+                Content="Hold:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,213,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="588,209,0,100"
+                HorizontalAlignment="Left"
+                Content="Interval:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,190,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="588,186,0,123"
+                HorizontalAlignment="Left"
+                Content="Repeat:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,110,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="590,107,0,202"
+                HorizontalAlignment="Left"
+                Content="Pause:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <ComboBox
+                Grid.Column="1"
+                Width="96"
+                Margin="645,133,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="#FF333333"
+                IsEditable="True"
+                IsReadOnly="True"
+                RenderTransformOrigin="0.203,-0.02">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.75" />
+                        <SkewTransform />
+                        <RotateTransform />
+                        <TranslateTransform Y="2.854" />
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+                <Button Background="#FF333333" Content="one" />
+                <Button Background="#FF333333" Content="two" />
+                <Button Background="#FF333333" Content="three" />
+            </ComboBox>
+            <Label
+                Grid.Column="1"
+                Margin="590,130,0,179"
+                HorizontalAlignment="Left"
+                Content="Key 2:"
+                FontStyle="Italic"
+                Foreground="#FFBE2FD6" />
+            <Grid
+                x:Name="LOGO"
+                Grid.ColumnSpan="2"
+                Width="143"
+                Height="69"
+                Margin="20,15,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*" />
+                    <ColumnDefinition Width="85*" />
+                </Grid.ColumnDefinitions>
+                <Grid.Effect>
+                    <DropShadowEffect />
+                </Grid.Effect>
+                <Label
+                    x:Name="logo_pink"
+                    Grid.ColumnSpan="2"
+                    Width="152"
+                    Height="69"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="PINK's"
+                    FontFamily="Impact"
+                    FontSize="50"
+                    FontWeight="Bold">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFE465DF" />
+                            <GradientStop Offset="0.393" Color="#FF4A2048" />
+                            <GradientStop Offset="0.146" Color="#FF1B0B1A" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Rectangle
+                    x:Name="logo_labelback"
+                    Grid.ColumnSpan="2"
+                    Width="98"
+                    Height="11"
+                    Margin="7,50,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Stroke="Black">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF4D366F" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label
+                    x:Name="logo_afktool"
+                    Grid.ColumnSpan="2"
+                    Width="91"
+                    Height="24"
+                    Margin="15,44,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="AntiAFK Tool"
+                    FontFamily="Cascadia Code Light"
+                    FontSize="10">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFFDFDFD" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+            <Grid
+                x:Name="TITLEBAR1"
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Button
+                    x:Name="bar"
+                    Width="315"
+                    Height="17"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    AutomationProperties.Name="titleBar"
+                    BorderBrush="Black"
+                    ClickMode="Press"
+                    Content="PINK's Anti AFK Tool"
+                    Cursor="Hand"
+                    FontSize="10"
+                    FontWeight="ExtraBold"
+                    IsTabStop="False">
+                    <Button.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Offset="0.423" Color="#FFBB6CB8" />
+                            <GradientStop Offset="0" Color="#FF987B97" />
+                            <GradientStop Offset="0.577" Color="Black" />
+                            <GradientStop Offset="0.853" Color="#FFFE58FF" />
+                            <GradientStop Offset="0.967" Color="#FF676767" />
+                        </LinearGradientBrush>
+                    </Button.Foreground>
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF191919" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button
+                    x:Name="minimize"
+                    Width="13"
+                    Height="17"
+                    Margin="285,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="#FFBE2FD6"
+                    Content="-"
+                    FontSize="10"
+                    FontStretch="Expanded"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFBE2FD6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button
+                    x:Name="maximize"
+                    Width="13"
+                    Height="17"
+                    Margin="301,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="#FFBE2FD6"
+                    Content="X"
+                    FontSize="10"
+                    FontStretch="Expanded"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFBE2FD6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button
+                    x:Name="totray"
+                    Width="13"
+                    Height="17"
+                    Margin="269,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="#FFBE2FD6"
+                    Content="*"
+                    FontSize="10"
+                    FontStretch="Expanded"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFBE2FD6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button
+                    x:Name="topmost"
+                    Width="13"
+                    Height="17"
+                    Margin="253,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="#FFBE2FD6"
+                    Content="^"
+                    FontSize="10"
+                    FontStretch="Expanded"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFBE2FD6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button
+                    x:Name="windowoptions"
+                    Width="14"
+                    Height="17"
+                    Margin="2,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    BorderBrush="#FFBE2FD6"
+                    Content="="
+                    FontSize="10"
+                    FontStretch="Expanded"
+                    FontWeight="ExtraBold"
+                    Foreground="#FFBE2FD6">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="White" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+            <Grid
+                x:Name="OPTIONS"
+                Grid.ColumnSpan="2"
+                Height="107"
+                Margin="7,78,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Rectangle
+                    x:Name="options_container"
+                    Width="295"
+                    Height="50"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF868686" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle
+                    x:Name="options_labelbar"
+                    Width="295"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Fill="Black"
+                    Stroke="Black"
+                    StrokeThickness="1.5" />
+                <Rectangle
+                    x:Name="options_labelback"
+                    Width="64"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF730E45" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label
+                    x:Name="options_label"
+                    Margin="17,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Options"
+                    FontFamily="Bahnschrift SemiBold"
+                    FontSize="6">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFC5A8A8" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+            <Grid
+                x:Name="KEYBINDS"
+                Grid.ColumnSpan="2"
+                Height="107"
+                Margin="7,130,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Rectangle
+                    x:Name="keybinds_container"
+                    Width="295"
+                    Height="56"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF868686" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle
+                    x:Name="keybinds_labelbar"
+                    Width="295"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Fill="Black"
+                    Stroke="Black"
+                    StrokeThickness="1.5" />
+                <Rectangle
+                    x:Name="keybinds_labelback"
+                    Width="64"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF730E45" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label
+                    x:Name="keybinds_label"
+                    Margin="17,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Keybinds"
+                    FontFamily="Bahnschrift SemiBold"
+                    FontSize="6">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFC5A8A8" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+            <Grid
+                x:Name="SEND"
+                Grid.ColumnSpan="2"
+                Width="296"
+                Height="48"
+                Margin="7,188,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Rectangle
+                    x:Name="send_container"
+                    Width="295"
+                    Height="44"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF868686" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle
+                    x:Name="send_labelbar"
+                    Width="295"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Fill="Black"
+                    Stroke="Black"
+                    StrokeThickness="1.5" />
+                <Rectangle
+                    x:Name="send_labelback"
+                    Width="64"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF730E45" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label
+                    x:Name="send_label"
+                    Margin="17,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Send"
+                    FontFamily="Bahnschrift SemiBold"
+                    FontSize="6">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFC5A8A8" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+                <Grid
+                    x:Name="send_buttons"
+                    Width="40"
+                    Height="27"
+                    Margin="272,16,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    RenderTransformOrigin="0.612,0.569">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="11*" />
+                        <RowDefinition Height="16*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18*" />
+                        <ColumnDefinition Width="19*" />
+                    </Grid.ColumnDefinitions>
+                    <Button
+                        x:Name="clear"
+                        Grid.RowSpan="2"
+                        Width="18"
+                        Height="9"
+                        Margin="0,9,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="KeyBindSet_ExitApp"
+                        BorderBrush="Black"
+                        Content="Clear"
+                        FontSize="4"
+                        FontWeight="Bold"
+                        Foreground="#FFC5A8A8"
+                        RenderTransformOrigin="0.5,0.5">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="Black" />
+                                <GradientStop Offset="1" Color="#FFFF54E9" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform />
+                                <SkewTransform />
+                                <RotateTransform />
+                                <TranslateTransform />
+                            </TransformGroup>
+                        </Button.RenderTransform>
+                    </Button>
+                    <Button
+                        x:Name="set"
+                        Width="18"
+                        Height="9"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="KeyBindSet_ExitApp"
+                        BorderBrush="Black"
+                        Content="Set"
+                        FontSize="4"
+                        FontWeight="Bold"
+                        Foreground="#FFC5A8A8">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="Black" />
+                                <GradientStop Offset="1" Color="#FFFF54E9" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                    <Button
+                        x:Name="test"
+                        Grid.Row="1"
+                        Width="18"
+                        Height="9"
+                        Margin="0,7,0,0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        AutomationProperties.Name="KeyBindSet_ExitApp"
+                        BorderBrush="Black"
+                        Content="Test"
+                        FontSize="4"
+                        FontWeight="Bold"
+                        Foreground="#FFC5A8A8">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                <GradientStop Color="Black" />
+                                <GradientStop Offset="1" Color="#FFFF54E9" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid
+                x:Name="ACTIONS"
+                Grid.ColumnSpan="2"
+                Height="107"
+                Margin="7,234,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top">
+                <Rectangle
+                    x:Name="actions_container"
+                    Width="295"
+                    Height="44"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF868686" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Rectangle
+                    x:Name="actions_labelbar"
+                    Width="295"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Fill="Black"
+                    Stroke="Black"
+                    StrokeThickness="1.5" />
+                <Rectangle
+                    x:Name="actions_labelback"
+                    Width="64"
+                    Height="9"
+                    Margin="0,4,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Stroke="Black"
+                    StrokeThickness="1.5">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FF730E45" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Label
+                    x:Name="actions_label"
+                    Margin="17,0,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Content="Actions"
+                    FontFamily="Bahnschrift SemiBold"
+                    FontSize="6">
+                    <Label.Foreground>
+                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                            <GradientStop Color="Black" />
+                            <GradientStop Offset="1" Color="#FFC5A8A8" />
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
