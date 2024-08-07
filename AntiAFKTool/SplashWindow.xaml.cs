@@ -16,19 +16,20 @@ using System.Windows.Media.Animation;
 
 namespace AntiAFKTool
 {
-    /// <summary>
-    /// Interaction logic for SplashWindow.xaml
-    /// </summary>
     public partial class SplashWindow : Window
     {
-        private DispatcherTimer? splashTimer;
+        private const double FadeInDuration = 3.0;
+        private const double FadeOutDuration = 1.0;
+        private const double SplashDuration = 6.0;
+
+        private readonly DispatcherTimer _splashTimer;
 
         public SplashWindow()
         {
             InitializeComponent();
             CenterWindowOnScreen();
+            _splashTimer = CreateAndStartSplashTimer();
             FadeIn();
-            StartSplashTimer();
         }
 
         private void CenterWindowOnScreen()
@@ -36,40 +37,62 @@ namespace AntiAFKTool
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        private void StartSplashTimer()
+        private DispatcherTimer CreateAndStartSplashTimer()
         {
-            splashTimer = new DispatcherTimer
+            var timer = new DispatcherTimer
             {
-                Interval = TimeSpan.FromSeconds(6)
+                Interval = TimeSpan.FromSeconds(SplashDuration)
             };
-            splashTimer.Tick += SplashTimer_Tick;
-            splashTimer.Start();
+            timer.Tick += SplashTimer_Tick!;
+            timer.Start();
+            return timer;
         }
 
-        private void SplashTimer_Tick(object? sender, EventArgs? e)
+        private void SplashTimer_Tick(object? sender, EventArgs e)
         {
-            splashTimer?.Stop();
+            _splashTimer.Stop();
             FadeOut();
         }
 
         private void ShowMainWindow()
         {
-            MainWindow mainWindow = new();
-            mainWindow.Show();
-            this.Hide();
+            try
+            {
+                var mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening main window: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Close();
+            }
         }
 
         private void FadeIn()
         {
-            DoubleAnimation fadeIn = new(0, 1, new Duration(TimeSpan.FromSeconds(3)));
-            this.BeginAnimation(Window.OpacityProperty, fadeIn);
+            BeginAnimation(OpacityProperty, CreateFadeAnimation(0, 1, FadeInDuration));
         }
 
         private void FadeOut()
         {
-            DoubleAnimation fadeOut = new(1, 0, new Duration(TimeSpan.FromSeconds(1)));
-            fadeOut.Completed += (s, e) => ShowMainWindow();
-            this.BeginAnimation(Window.OpacityProperty, fadeOut);
+            var fadeOutAnimation = CreateFadeAnimation(1, 0, FadeOutDuration);
+            fadeOutAnimation.Completed += (s, e) => Dispatcher.Invoke(ShowMainWindow);
+            BeginAnimation(OpacityProperty, fadeOutAnimation);
+        }
+
+        private static DoubleAnimation CreateFadeAnimation(double from, double to, double durationSeconds)
+        {
+            return new DoubleAnimation(from, to, new Duration(TimeSpan.FromSeconds(durationSeconds)))
+            {
+                EasingFunction = new QuadraticEase()
+            };
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            _splashTimer.Stop();
+            base.OnClosed(e);
         }
     }
 }
