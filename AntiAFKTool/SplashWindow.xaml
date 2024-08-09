@@ -19,35 +19,43 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid
-        Width="1027"
-        Height="872"
+    <Canvas
+        Width="482"
+        Height="661"
+        Margin="272,149,0,0"
         HorizontalAlignment="Left"
-        VerticalAlignment="Center">
+        VerticalAlignment="Top">
 
         <Image
             x:Name="image"
+            Canvas.Left="36"
             Width="411"
             Height="407"
-            Margin="0,149,0,0"
-            HorizontalAlignment="Center"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Source="/spash.png" />
 
         <Wpf:WebView2
             x:Name="progressbar"
+            Canvas.Top="412"
             Width="482"
             Height="249"
-            Margin="0,556,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top">
+            Source="" SnapsToDevicePixels="True" ClipToBounds="True" AllowExternalDrop="False" IsHitTestVisible="False" AutomationProperties.IsRowHeader="True" >
+            <Wpf:WebView2.Style>
+                <Style/>
+            </Wpf:WebView2.Style>
             <Wpf:WebView2.CacheMode>
-                <BitmapCache />
+                <BitmapCache/>
             </Wpf:WebView2.CacheMode>
+            <Wpf:WebView2.BindingGroup>
+                <BindingGroup/>
+            </Wpf:WebView2.BindingGroup>
+            <Wpf:WebView2.DataContext>
+                <Wpf:WebView2 IsHitTestVisible="False" IsManipulationEnabled="True"/>
+            </Wpf:WebView2.DataContext>
             <Wpf:WebView2.CreationProperties>
-                <Wpf:CoreWebView2CreationProperties />
+                <Wpf:CoreWebView2CreationProperties/>
             </Wpf:WebView2.CreationProperties>
         </Wpf:WebView2>
-
-    </Grid>
+    </Canvas>
 </Window>
