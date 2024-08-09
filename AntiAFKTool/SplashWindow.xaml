@@ -2,37 +2,52 @@
     x:Class="AntiAFKTool.SplashWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:AntiAFKTool"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="PINKs Anti AFK Tool"
-    Width="408"
-    Height="408"
+    Width="1037"
+    Height="872"
+    AllowsTransparency="True"
+    Background="{x:Null}"
     Cursor="Wait"
     Icon="/logo2.png"
     ResizeMode="NoResize"
     ScrollViewer.VerticalScrollBarVisibility="Disabled"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
-    mc:Ignorable="d" AllowsTransparency="True" Opacity="0">
-    <Window.Effect>
-        <DropShadowEffect />
-    </Window.Effect>
+    mc:Ignorable="d">
+
     <Grid
-        Width="413"
-        Height="410"
+        Width="1027"
+        Height="872"
         HorizontalAlignment="Left"
-        VerticalAlignment="Top">
-        <Grid.Effect>
-            <DropShadowEffect />
-        </Grid.Effect>
+        VerticalAlignment="Center">
+
         <Image
             x:Name="image"
             Width="411"
             Height="407"
-            HorizontalAlignment="Left"
+            Margin="0,149,0,0"
+            HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Source="/spash.png" />
+
+        <Wpf:WebView2
+            x:Name="progressbar"
+            Width="482"
+            Height="249"
+            Margin="0,556,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <Wpf:WebView2.CacheMode>
+                <BitmapCache />
+            </Wpf:WebView2.CacheMode>
+            <Wpf:WebView2.CreationProperties>
+                <Wpf:CoreWebView2CreationProperties />
+            </Wpf:WebView2.CreationProperties>
+        </Wpf:WebView2>
 
     </Grid>
 </Window>
